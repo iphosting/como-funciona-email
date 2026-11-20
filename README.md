@@ -6,8 +6,9 @@ Uma única cena 3D com duas saídas:
   arquivos estáticos).
 - **Vídeo narrado:** `out/como-funciona-email.mp4` (1080p) e `out/como-funciona-email-celular.mp4` (720p), na voz do
   Rodrigo.
-- **Código:** https://github.com/iphosting/como-funciona-email (privado, criado em 20/11/2026 a pedido do Rodrigo:
-  "cria o repositório no github e faz o push"). Para apagar: `gh repo delete iphosting/como-funciona-email`.
+- **Código:** https://github.com/iphosting/como-funciona-email (criado privado em 20/11/2026 a pedido do Rodrigo, "cria o repositório
+  no github e faz o push", e aberto no mesmo dia: "deixa o repositório público"). Para voltar a privado:
+  `gh repo edit iphosting/como-funciona-email --visibility private --accept-visibility-change-consequences`. Para apagar: `gh repo delete iphosting/como-funciona-email`.
 
 Pedido do Rodrigo em 20/11/2026: "usando a skill video3d com o fable 5.2 cria uma explicação detalhada de como funciona
 um email, o envio, detalhes da entrega, porque usa spf dmark dkim, porque sao devolvidos, ou seja, faca uma skill
