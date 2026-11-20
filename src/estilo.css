@@ -1,0 +1,77 @@
+/* Painéis por cima da cena. Tudo em "em": o tamanho vem do font-size de quem contém (.hud). */
+.hud { position: absolute; inset: 0; pointer-events: none; color: #e8eefc; font-family: Inter, system-ui, "Segoe UI", Roboto, Arial, sans-serif; overflow: hidden; }
+.hud * { box-sizing: border-box; }
+.hud .titulo { position: absolute; left: 1.6em; top: 1.3em; max-width: 56%; text-shadow: 0 2px 12px #000c; background: #070b16d9; border-radius: 0.9em; padding: 0.6em 1.2em 0.8em 1em; box-shadow: 0 0 1.6em 0.6em #070b16d9; }
+.hud .titulo small { font-size: 0.95em; font-weight: 800; letter-spacing: 0.16em; color: #60a5fa; text-transform: uppercase; }
+.hud .titulo h1 { margin: 0.05em 0 0; font-size: 2.9em; line-height: 1.08; font-weight: 800; }
+.hud .titulo p { margin: 0.25em 0 0; font-size: 1.25em; color: #a9bbdc; font-weight: 500; }
+
+.hud .lateral { position: absolute; right: 1.6em; top: 1.6em; width: 25.5em; display: flex; flex-direction: column; gap: 0.8em; }
+.hud .painel { background: #0c1528e6; border: 0.12em solid #27406e; border-radius: 0.9em; padding: 0.8em 0.9em; box-shadow: 0 0.6em 1.6em #0008; transition: none; }
+.hud .painel.grande { border-color: #60a5fa; box-shadow: 0 0 2.2em #3b82f666; }
+.hud .painel.alerta { border-color: #ef4444; box-shadow: 0 0 2.2em #ef444455; }
+.hud .painel-titulo { display: flex; justify-content: space-between; align-items: baseline; font-weight: 800; font-size: 1.15em; color: #93c5fd; margin-bottom: 0.4em; }
+.hud .painel-titulo small { font-size: 0.72em; color: #8fa3c8; font-weight: 600; }
+.hud .vazio { color: #8fa3c8; font-size: 0.95em; padding: 0.4em 0; }
+.hud .linha { display: grid; grid-template-columns: 3.9em 1fr 5em; align-items: center; gap: 0.3em; padding: 0.3em 0.5em; border-radius: 0.45em; background: #101d38; margin-top: 0.28em; font-size: 0.95em; }
+.hud .linha .nome { font-weight: 700; }
+.hud .linha .end { color: #cfe0ff; font-size: 0.78em; font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hud .linha.errada .end { color: #c9a2a6; }
+.hud .linha .porta { font-weight: 800; color: #34d399; text-align: right; white-space: nowrap; }
+.hud .linha .trocas { grid-column: 1 / -1; font-size: 0.78em; color: #fca5a5; font-weight: 700; margin-top: -0.15em; }
+.hud .linha .trocas:empty { display: none; }
+.hud .linha.errada { background: #3a1216; }
+.hud .linha.errada .porta { color: #fca5a5; }
+.hud .linha.pisca { outline: 0.14em solid #f87171; background: #5a161b; }
+
+.hud .ind .cpu { display: grid; grid-template-columns: auto 1fr 3.2em; gap: 0.6em; align-items: center; font-weight: 700; font-size: 0.95em; }
+.hud .ind .barra { height: 0.75em; background: #0a1222; border: 0.1em solid #27406e; border-radius: 1em; overflow: hidden; }
+.hud .ind .barra i { display: block; height: 100%; border-radius: 1em; }
+.hud .ind .cpu b { text-align: right; font-size: 1.2em; }
+.hud .ind .grade { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5em; margin-top: 0.6em; }
+.hud .ind .grade > div { background: #101d38; border-radius: 0.5em; padding: 0.4em 0.6em; }
+.hud .ind .grade .larga { grid-column: 1 / -1; }
+.hud .ind .grade b { display: block; font-size: 1.55em; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.hud .ind .grade b { font-size: 1.4em; }
+.hud .ind .grade span { font-size: 0.74em; color: #8fa3c8; font-weight: 600; }
+.hud .ind .estado { display: flex; flex-wrap: wrap; gap: 0.35em; margin-top: 0.6em; }
+.hud .tag { font-size: 0.76em; font-weight: 800; padding: 0.22em 0.6em; border-radius: 1em; }
+.hud .tag.ok { background: #064e3b; color: #6ee7b7; }
+.hud .tag.ruim { background: #5a161b; color: #fca5a5; }
+.hud .tag.neutra { background: #1b2a4a; color: #a9bbdc; }
+.hud .tag.ambar { background: #5b3d05; color: #fcd34d; }
+.hud .ind .decisao { margin-top: 0.6em; font-size: 0.88em; font-weight: 700; color: #cfe0ff; min-height: 2.9em; line-height: 1.25; }
+.hud .ind .decisao small { display: block; font-size: 0.78em; color: #8fa3c8; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+
+.hud .cores { position: absolute; left: 2.6em; bottom: 1.6em; display: flex; flex-wrap: wrap; gap: 0.3em 1.1em; font-size: 0.9em; font-weight: 600; color: #a9bbdc; max-width: 45%; }
+.hud .cores i { display: inline-block; width: 0.85em; height: 0.85em; border-radius: 0.2em; margin-right: 0.4em; vertical-align: -0.08em; }
+
+.hud .fala { position: absolute; left: 36.5%; bottom: 4.2em; transform: translateX(-50%); max-width: 60%; width: max-content; background: #060b16ee; border: 0.1em solid #27406e; border-radius: 0.8em; padding: 0.5em 1.2em; font-size: 1.6em; font-weight: 600; line-height: 1.25; text-align: center; box-shadow: 0 0.4em 1.2em #000a; }
+.hud .rodape { position: absolute; right: 1.8em; bottom: 1.4em; font-size: 0.78em; color: #6f83aa; }
+
+.hud .cartao { position: absolute; left: 37%; top: 29%; background: #0c1528f2; border: 0.14em solid #60a5fa; border-radius: 1.1em; padding: 1.3em 1.9em; min-width: 24em; box-shadow: 0 0 3em #3b82f655; }
+.hud .cartao h2 { margin: 0 0 0.5em; font-size: 2em; font-weight: 800; color: #93c5fd; }
+.hud .cartao div { font-size: 1.35em; font-weight: 600; padding: 0.22em 0; }
+.hud .cartao div::before { content: "•  "; color: #60a5fa; }
+.hud .cartao .url { font-size: 1.9em; font-weight: 800; color: #67e8f9; margin-top: 0.3em; }
+.hud .cartao .url::before { content: ""; }
+
+/* e-mail: conferência, conversa e placar */
+.hud .conf .dados { display: grid; grid-template-columns: auto 1fr; gap: 0.12em 0.7em; font-size: 0.86em; align-items: baseline; }
+.hud .conf .dados span { color: #8fa3c8; font-weight: 600; }
+.hud .conf .dados b { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hud .conf .estado { display: flex; flex-wrap: wrap; gap: 0.35em; margin-top: 0.5em; }
+.hud .conf .estado .tag { font-size: 0.86em; }
+.hud .conf .decisao { margin-top: 0.5em; font-size: 0.84em; font-weight: 600; color: #cfe0ff; line-height: 1.25; min-height: 3.9em; }
+.hud .conf .decisao b { display: block; font-size: 1.16em; font-weight: 800; }
+.hud .conf .decisao b.ok { color: #6ee7b7; }
+.hud .conf .decisao b.ambar { color: #fcd34d; }
+.hud .conf .decisao b.ruim { color: #fca5a5; }
+.hud .conversa { min-height: 10.6em; }
+.hud .fala-linha { display: flex; gap: 0.5em; font-size: 0.8em; font-weight: 600; line-height: 1.32; font-variant-numeric: tabular-nums; }
+.hud .fala-linha b { flex: none; width: 1em; font-weight: 800; color: #8fa3c8; }
+.hud .fala-linha span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hud .fala-linha.i { font-style: italic; opacity: 0.92; }
+.hud .fala-linha.C, .hud .fala-linha.S { font-family: ui-monospace, "DejaVu Sans Mono", Menlo, Consolas, monospace; font-size: 0.76em; }
+.hud .ind .estado { min-height: 1.5em; }
+.hud .ind .nota { margin-top: 0.5em; font-size: 0.7em; color: #8fa3c8; font-weight: 600; line-height: 1.25; }

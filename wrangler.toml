@@ -1,0 +1,5 @@
+# Página interativa do "como funciona o e-mail" em 3D (Cloudflare Pages, só arquivos estáticos).
+# Publicar: npm run build && python3 ~/projects/cloudflare/wr-cofre.py pages deploy dist --project-name como-funciona-email --branch main
+name = "como-funciona-email"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-11-01"

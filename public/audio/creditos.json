@@ -1,0 +1,57 @@
+{
+ "abertura": {
+  "caracteres": 302,
+  "creditos": "146",
+  "bytes": 335246
+ },
+ "envio": {
+  "caracteres": 307,
+  "creditos": "149",
+  "bytes": 326051
+ },
+ "dns": {
+  "caracteres": 307,
+  "creditos": "149",
+  "bytes": 319781
+ },
+ "conversa": {
+  "caracteres": 322,
+  "creditos": "156",
+  "bytes": 349038
+ },
+ "pordentro": {
+  "caracteres": 424,
+  "creditos": "206",
+  "bytes": 464395
+ },
+ "golpe": {
+  "caracteres": 292,
+  "creditos": "142",
+  "bytes": 318527
+ },
+ "spf": {
+  "caracteres": 349,
+  "creditos": "169",
+  "bytes": 396686
+ },
+ "dkim": {
+  "caracteres": 338,
+  "creditos": "164",
+  "bytes": 365757
+ },
+ "dmarc": {
+  "caracteres": 460,
+  "creditos": "223",
+  "bytes": 518312
+ },
+ "devolucao": {
+  "caracteres": 468,
+  "creditos": "227",
+  "bytes": 492398
+ },
+ "fechamento": {
+  "caracteres": 401,
+  "creditos": "194",
+  "bytes": 454364
+ }
+}

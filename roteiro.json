@@ -1,0 +1,71 @@
+{
+ "_o_que_e": "Roteiro de 'Como funciona o e-mail' em 3D (20/11/2026). Pedido do Rodrigo: 'usando a skill video3d com o fable 5.2 cria uma explicação detalhada de como funciona um email, o envio, detalhes da entrega, porque usa spf dmark dkim, porque sao devolvidos ... para um usuario comum entender o funcionamento'. 'fala' é o texto mandado ao ElevenLabs (siglas escritas como se pronunciam, números por extenso); 'titulo' e 'sub' vão para a tela com a grafia certa.",
+ "cenas": [
+  {
+   "id": "abertura",
+   "titulo": "Como funciona o e-mail",
+   "sub": "O caminho de uma mensagem, da Ana até o Bruno",
+   "fala": "Olá, aqui é o Rodrigo, da ipHosting. Você escreve um e-mail, aperta enviar, e em segundos ele chega do outro lado do mundo. Parece simples, mas a mensagem passa por várias etapas, e em cada uma pode ser conferida, atrasada ou devolvida. Vamos acompanhar um e-mail da Ana até o Bruno, em três dimensões."
+  },
+  {
+   "id": "envio",
+   "titulo": "1. Você aperta enviar",
+   "sub": "O programa entrega ao servidor de envio, com usuário e senha (porta 587)",
+   "fala": "A Ana aperta enviar. O programa dela não entrega a mensagem direto ao Bruno. Ele entrega ao servidor de envio da Ana, depois de provar, com usuário e senha, que é ela mesma. É como deixar uma carta na agência dos Correios. O servidor guarda a mensagem numa fila e, a partir daí, o responsável por ela é ele."
+  },
+  {
+   "id": "dns",
+   "titulo": "2. Para onde mandar?",
+   "sub": "O DNS responde com o registro MX do domínio de destino",
+   "fala": "Só que o servidor da Ana não sabe onde o Bruno mora. Então ele pergunta ao dê-ene-ésse, que é a lista de endereços da internet: quem recebe os e-mails desse domínio? A resposta está num registro chamado ême-xis, que aponta o servidor de entrada do Bruno. Se o domínio não existir, a viagem acaba aqui mesmo."
+  },
+  {
+   "id": "conversa",
+   "titulo": "3. A conversa entre os servidores",
+   "sub": "SMTP: cada resposta é um número. 250 quer dizer aceito",
+   "fala": "Agora os dois servidores conversam. O da Ana se apresenta, diz de quem é a mensagem e para quem ela vai. O do Bruno responde a cada passo com um número. Duzentos e cinquenta significa: aceito. Nesse instante, a responsabilidade muda de mãos. A mensagem é guardada na caixa de entrada, e o celular do Bruno busca uma cópia."
+  },
+  {
+   "id": "pordentro",
+   "titulo": "A mensagem por dentro",
+   "sub": "O envelope é para os servidores; o campo De é o que você vê",
+   "fala": "Vamos abrir essa mensagem. Ela tem duas partes, como uma carta. Por fora, o envelope, com o remetente e o destinatário que os servidores usam. Por dentro, o cabeçalho, com os campos De, Para e Assunto, que é o que você enxerga. Agora compare com a mensagem de baixo, escrita por um golpista. O envelope é outro, o servidor é outro, mas o campo De é idêntico. O e-mail nasceu sem nenhuma conferência desse campo. Guarde isso."
+  },
+  {
+   "id": "golpe",
+   "titulo": "O golpe do remetente falso",
+   "sub": "Sem proteção, a mensagem falsa entra igual à verdadeira",
+   "fala": "É assim que funciona a fraude. O golpista usa o servidor dele e escreve o endereço da Ana no campo De. Sem proteção, o servidor do Bruno aceita, e a mensagem falsa cai na caixa de entrada, igualzinha a uma verdadeira. É o golpe do boleto falso. Para fechar essa porta, existem três proteções."
+  },
+  {
+   "id": "spf",
+   "titulo": "SPF: quem pode enviar",
+   "sub": "A lista de servidores autorizados, publicada no DNS",
+   "fala": "A primeira é o ésse-pê-éfe. O dono do domínio publica, no dê-ene-ésse, a lista dos servidores autorizados a enviar em nome dele. Na chegada, o servidor do Bruno compara o endereço de quem bateu na porta com essa lista. O golpista não está nela, e a mensagem dele costuma ir para o spam. Mas atenção: o ésse-pê-éfe olha só o envelope, não o campo De."
+  },
+  {
+   "id": "dkim",
+   "titulo": "DKIM: o lacre da mensagem",
+   "sub": "Assinatura digital: chave secreta no servidor, chave pública no DNS",
+   "fala": "A segunda é o dê-quim, uma assinatura digital que funciona como um lacre. O servidor da Ana assina cada mensagem com uma chave secreta. A chave pública, que confere a assinatura, fica no dê-ene-ésse. Se o lacre confere, a mensagem saiu mesmo daquele domínio, e ninguém mexeu nela no caminho. Se alguém alterar uma vírgula, o lacre quebra."
+  },
+  {
+   "id": "dmarc",
+   "titulo": "DMARC: a ordem do dono",
+   "sub": "Exige o mesmo domínio do campo De e diz o que fazer com a reprovada",
+   "fala": "Mas falta uma coisa. Essas duas conferências, sozinhas, não olham o campo De, e não dizem o que fazer quando falham. Veja o golpista esperto: ele usa um envelope do domínio dele, passa no ésse-pê-éfe, e continua mostrando o nome da Ana. A terceira proteção, o dê-marc, amarra tudo. Ele exige que o domínio aprovado seja o mesmo do campo De, e traz a ordem do dono: observar, mandar para o spam ou recusar. Com a ordem de recusar, o golpista é barrado na porta."
+  },
+  {
+   "id": "devolucao",
+   "titulo": "Por que um e-mail volta",
+   "sub": "Código 5: erro definitivo. Código 4: temporário, tenta de novo",
+   "fala": "E por que um e-mail volta? Porque o servidor de envio sempre avisa quando não consegue entregar. Se o endereço não existe, o destino responde com um código que começa com cinco, um erro definitivo, e a devolução chega na hora, com o motivo escrito. Se a caixa está cheia, ou o servidor está fora do ar, em geral o código começa com quatro, um erro temporário. A mensagem volta para a fila, e o servidor tenta de novo, por até alguns dias, antes de desistir e devolver."
+  },
+  {
+   "id": "fechamento",
+   "titulo": "Resumo",
+   "sub": "SPF autoriza, DKIM lacra, DMARC decide",
+   "fala": "Resumindo. O e-mail vai do seu programa para o servidor de envio, descobre o caminho no dê-ene-ésse, e é conferido na chegada. Ésse-pê-éfe diz quem pode enviar, dê-quim lacra a mensagem, e dê-marc dá a ordem final. Se um e-mail seu voltar, leia a devolução: o motivo está escrito nela. Agora é com você: abra a página e tente enganar o servidor do Bruno. Eu sou o Rodrigo, da ipHosting. Até a próxima."
+  }
+ ]
+}

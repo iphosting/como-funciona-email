@@ -1,0 +1,13 @@
+{
+ "abertura": 20.924,
+ "envio": 20.349,
+ "dns": 19.958,
+ "conversa": 21.786,
+ "pordentro": 28.996,
+ "golpe": 19.879,
+ "spf": 24.764,
+ "dkim": 22.831,
+ "dmarc": 32.366,
+ "devolucao": 30.746,
+ "fechamento": 28.369
+}

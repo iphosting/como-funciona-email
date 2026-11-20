@@ -1,0 +1,75 @@
+/* Página interativa */
+html, body, #raiz { margin: 0; height: 100%; background: #070b16; color: #e8eefc; font-family: Inter, system-ui, "Segoe UI", Roboto, Arial, sans-serif; overflow: hidden; }
+.app { position: fixed; inset: 0; overflow: hidden; touch-action: none; }
+.app canvas { display: block; }
+.hud-web { position: absolute; inset: 0; pointer-events: none; font-size: clamp(10px, 1.02vw, 19px); }
+.hud-web .hud .fala { bottom: 5.4em; }
+.hud-web .hud .cores { bottom: 5.6em; }
+.hud-web .hud .titulo { top: 1.6em; }
+
+button { font: inherit; font-weight: 700; color: #e8eefc; background: #14223f; border: 1.5px solid #2f4a7e; border-radius: 10px; padding: 9px 14px; cursor: pointer; }
+button:hover:not(:disabled) { background: #1c2f57; border-color: #60a5fa; }
+button:focus-visible { outline: 3px solid #93c5fd; outline-offset: 2px; }
+button:disabled { opacity: 0.45; cursor: default; }
+button.ativo { background: #1d3a6e; border-color: #60a5fa; }
+button.principal { background: #2563eb; border-color: #60a5fa; color: #fff; }
+button.principal:hover:not(:disabled) { background: #1d4ed8; }
+button.perigo { border-color: #b4403a; }
+button.perigo.ativo { background: #7f1d1d; border-color: #f87171; }
+button.ok { border-color: #2f8f6b; }
+button.ok.ativo { background: #064e3b; border-color: #34d399; }
+
+.topo { position: absolute; left: 22px; top: 16px; pointer-events: none; text-shadow: 0 2px 12px #000c; }
+.topo b { display: block; font-size: clamp(20px, 2.4vw, 40px); font-weight: 800; }
+.topo b span, .inicio h1 span { color: #22d3ee; }
+.topo small { font-size: clamp(12px, 1.1vw, 18px); color: #a9bbdc; font-weight: 600; }
+.app.tempestade .topo small { color: #fca5a5; }
+.app .topo small.bom { color: #6ee7b7; }
+
+.controles { position: absolute; left: 0; right: 0; bottom: 0; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; padding: 12px 14px calc(12px + env(safe-area-inset-bottom)); background: linear-gradient(#070b1600, #070b16ee 45%); font-size: 14px; }
+.controles.visita { align-items: center; }
+.passos { display: inline-flex; gap: 6px; align-items: center; margin: 0 6px; }
+.passos i { width: 14px; height: 14px; border-radius: 50%; background: #1b2a4a; border: 1.5px solid #2f4a7e; cursor: pointer; }
+.passos i.feito { background: #2563eb; }
+.passos i.atual { background: #67e8f9; border-color: #fff; }
+.topo em { display: block; margin-top: 4px; font-style: normal; font-size: 13px; color: #8fa3c8; max-width: 46ch; }
+.cartaz em { display: block; margin-top: 10px; font-style: normal; font-size: 13px; color: #8fa3c8; }
+
+.ficha { position: absolute; right: 16px; top: 16px; bottom: 16px; width: min(380px, 92vw); overflow: auto; background: #0c1528f2; border: 1.5px solid #27406e; border-radius: 14px; padding: 16px 18px; font-size: 14px; line-height: 1.4; }
+.ficha h2 { margin: 0 0 8px; font-size: 19px; }
+.ficha h3 { margin: 16px 0 6px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: #93c5fd; }
+.ficha p { margin: 0; color: #cfdcf5; }
+.ficha dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 5px 10px; }
+.ficha dt { border-left: 4px solid; padding-left: 8px; color: #a9bbdc; font-weight: 600; }
+.ficha dd { margin: 0; }
+.ficha dd b { font-variant-numeric: tabular-nums; }
+.ficha dd span { color: #8fa3c8; font-size: 12px; margin-left: 4px; }
+.ficha button { margin-top: 16px; width: 100%; }
+
+.inicio { position: absolute; inset: 0; display: grid; place-items: center; background: radial-gradient(circle at 50% 40%, #0c1830cc, #070b16f5); padding: 18px; }
+.cartaz { max-width: 640px; text-align: center; }
+.cartaz small { font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #60a5fa; font-size: 13px; }
+.cartaz h1 { margin: 6px 0 12px; font-size: clamp(34px, 6vw, 68px); line-height: 1.02; font-weight: 800; }
+.cartaz p { margin: 0 0 22px; font-size: clamp(15px, 1.5vw, 19px); line-height: 1.5; color: #cfdcf5; }
+.cartaz .botoes { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; font-size: 16px; }
+.cartaz .botoes button { padding: 13px 20px; }
+.cartaz a { display: inline-block; margin-top: 18px; color: #93c5fd; font-size: 14px; }
+
+.sem3d { max-width: 760px; margin: 0 auto; padding: 24px; height: 100%; overflow: auto; }
+.sem3d video { width: 100%; border-radius: 12px; }
+
+/* celular */
+.app.movel .hud-web { font-size: 10.5px; }
+.app.movel .hud .lateral { display: none; left: 8px; right: 8px; width: auto; top: 72px; max-height: 50vh; overflow: auto; pointer-events: auto; }
+.app.movel.painel-aberto .hud .lateral { display: flex; }
+.app.movel .hud .cores, .app.movel .hud .rodape { display: none; }
+.app.movel .hud .titulo { left: 12px; top: 10px; max-width: 94%; }
+.app.movel .hud .titulo h1 { font-size: 2.1em; }
+.app.movel .hud .fala { left: 50%; max-width: 94%; width: 94%; bottom: 9.5em; font-size: 1.35em; }
+.app.movel.painel-aberto .topo em { display: none; }
+.app.movel .hud .cartao { left: 50%; top: 40%; min-width: 0; width: 88%; }
+.app.movel .controles { font-size: 12.5px; gap: 6px; padding: 8px 8px calc(8px + env(safe-area-inset-bottom)); }
+.app.movel .controles button { padding: 8px 10px; }
+.app.movel .ficha { left: 8px; right: 8px; top: auto; bottom: 8px; width: auto; max-height: 56vh; }
+.app.movel .topo { left: 12px; top: 10px; }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
